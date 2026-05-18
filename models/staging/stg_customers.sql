@@ -14,8 +14,10 @@ renamed as (
         id as customer_id,
 
         ---------- text
-        name as customer_name
+        name as customer_name,
 
+
+        coalesce(name, id) as customer_nameid
     from source
 
 )
