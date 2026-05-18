@@ -1,3 +1,6 @@
 models:
   - name: int_orders
+    config:
+      group: product
+      access: private
 

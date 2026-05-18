@@ -3,6 +3,8 @@ models:
     config:
       contract:
         enforced: true
+      group: product
+      access: public
     latest_version: 1
     columns:
       - name: order_id
