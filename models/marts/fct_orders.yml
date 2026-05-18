@@ -2,31 +2,44 @@ models:
   - name: fct_orders
     config:
       contract:
-        enforced: false
+        enforced: true
+    latest_version: 1
     columns:
-      - name: ORDER_ID
+      - name: order_id
         data_type: character varying(16777216)
-      - name: LOCATION_ID
+        constraints:
+          - type: not_null
+      - name: location_id
         data_type: character varying(16777216)
-      - name: CUSTOMER_ID
+      - name: customer_id
         data_type: character varying(16777216)
-      - name: ORDER_TOTAL
-        data_type: NUMBER(38,6)
-      - name: TAX_PAID
-        data_type: NUMBER(38,6)
-      - name: ORDERED_AT
-        data_type: TIMESTAMP_NTZ
-      - name: CUSTOMER_NAME
+      - name: order_total
+        data_type: number(38,6)
+      - name: tax_paid
+        data_type: number(38,6)
+      - name: ordered_at
+        data_type: timestamp_ntz
+      - name: customer_name
         data_type: character varying(16777216)
-      - name: LOCATION_NAME
+      - name: location_name
         data_type: character varying(16777216)
-      - name: TAX_RATE
-        data_type: NUMBER(38,0)
-      - name: LOCATION_OPENED_AT
-        data_type: TIMESTAMP_NTZ
-      - name: ORDERED_MONTH
-        data_type: NUMBER(2,0)
-      - name: ORDERED_DAY
-        data_type: NUMBER(2,0)
-      - name: ORDERED_YEAR
-        data_type: NUMBER(4,0)
+      - name: tax_rate
+        data_type: number(38,0)
+      - name: location_opened_at
+        data_type: timestamp_ntz
+      - name: ordered_month
+        data_type: number(2,0)
+      - name: ordered_day
+        data_type: number(2,0)
+      - name: ordered_year
+        data_type: number(4,0)
+    versions:
+      - v: 1
+        config:
+          alias: fct_orders
+      - v: 2
+        columns:
+        - name: order_amount
+          data_type: decimal
+        - include: all
+          exclude: [order_total]
