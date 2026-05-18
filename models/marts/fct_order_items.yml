@@ -1,0 +1,5 @@
+models:
+  - name: fct_order_items
+    config:
+      group: product
+      access: protected

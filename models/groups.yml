@@ -1,0 +1,10 @@
+groups:
+  - name: product
+    owner:
+      name: Oluf Tang Engelund
+      email: oen@cvation.com
+  - name: finance
+    owner:
+      name: Oluf Tang Engelund
+      email: oen@cvation.com
+      
