@@ -1,1 +1,1 @@
-select {{ find_datatypes(ref('fct_orders')) }}
+select {{ find_datatypes(ref('fct_orders', version=2)) }}
